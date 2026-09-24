@@ -25,13 +25,13 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-400">
-              Completed Projects
+              Design Showcase
             </span>
             <h1 className="mt-2 text-4xl sm:text-5xl font-black tracking-tight text-white uppercase font-sans">
               OUR WORK / GALLERY
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-              Explore our portfolio of custom steel fabrication, bespoke wooden cabinetry, respectful caskets and coffins, and certified electrical installations. Click on any item to view high-resolution details, technical specifications, and inquiry options.
+              Explore example designs and specifications of custom steel fabrication, bespoke wooden cabinetry, respectful caskets and coffins, and electrical installations. Click on any item to view high-resolution details, technical specifications, and quotation options.
             </p>
 
             {/* Filtering Buttons as requested */}
@@ -96,9 +96,9 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8 text-xs text-slate-500 font-medium">
             <span>
-              Showing <strong className="text-slate-800">{filteredItems.length}</strong> verified projects
+              Showing <strong className="text-slate-800">{filteredItems.length}</strong> custom design examples
             </span>
-            <span className="hidden sm:inline">Click any photograph to enlarge</span>
+            <span className="hidden sm:inline">Click any image to enlarge and inspect</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -118,15 +118,13 @@ export const GalleryPage: React.FC<GalleryPageProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
-                  {/* Badge */}
+                  {/* Badges */}
                   <span className="absolute top-3 left-3 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 bg-slate-900/80 text-white rounded backdrop-blur-sm">
                     {item.categoryLabel}
                   </span>
-
-                  {/* Expand icon hover cue */}
-                  <div className="absolute top-3 right-3 p-2 rounded-full bg-slate-900/70 text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-                    <Maximize2 className="w-4 h-4" />
-                  </div>
+                  <span className="absolute top-3 right-3 text-[10px] font-medium px-2 py-0.5 bg-blue-600/90 text-white rounded backdrop-blur-sm">
+                    {item.badge || 'Custom Design Example'}
+                  </span>
                 </div>
 
                 {/* Details */}

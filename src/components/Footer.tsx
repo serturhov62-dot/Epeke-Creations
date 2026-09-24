@@ -36,11 +36,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Epeke Creations provides custom steel work, custom woodworking, respectful caskets and coffins, and electrical installations. Built with reliable workmanship and practical design across South Africa.
             </p>
 
-            {/* Official Registration Markers */}
-            <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
-              <p>Registration No: <span className="text-slate-300">{COMPANY_INFO.regNumber}</span></p>
-              <p>Tax Reference No: <span className="text-slate-300">{COMPANY_INFO.taxNumber}</span></p>
-            </div>
+            {/* Official Registration Markers (shown only if configured) */}
+            {COMPANY_INFO.regNumber ? (
+              <div className="pt-2 text-xs font-mono text-slate-400 space-y-1">
+                <p>Registration No: <span className="text-slate-300">{COMPANY_INFO.regNumber}</span></p>
+                {COMPANY_INFO.taxNumber && (
+                  <p>Tax Reference No: <span className="text-slate-300">{COMPANY_INFO.taxNumber}</span></p>
+                )}
+              </div>
+            ) : null}
 
             {/* Primary Action Button in Footer */}
             <div className="pt-3 flex flex-wrap gap-3">

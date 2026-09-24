@@ -54,7 +54,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               OUR SERVICES
             </h1>
             <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-              Epeke Creations provides custom steel work, custom woodworking, respectful caskets and coffins, and certified electrical services. Built with durable materials, practical engineering, and dependable customer service.
+              Epeke Creations provides custom steel work, custom woodworking, respectful caskets and coffins, and electrical services. Built with durable materials, practical engineering, and dependable customer service.
             </p>
 
             {/* Filter Buttons / Interactive Segmented Controls */}
@@ -493,7 +493,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
-                    Category 4 · Certified Electrical Engineering
+                    Category 4 · Electrical Installations & Repairs
                   </span>
                 </div>
 
@@ -502,7 +502,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                 </h2>
 
                 <p className="mt-3 text-base text-slate-600 max-w-3xl leading-relaxed">
-                  Professional electrical installations, distribution board modernization, lighting, fault diagnosis, and safety inspections. All work adheres to the South African National Standards (SANS 10142-1) Code of Practice.
+                  Professional electrical installations, distribution board modernization, lighting, fault diagnosis, and maintenance. All work is performed with neat routing, proper isolation, and thorough safety checks. Services are subject to applicable regulations and requirements.
                 </p>
 
                 {/* Electrical Imagery Grid */}
@@ -565,13 +565,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200 flex flex-col justify-between">
                     <div>
                       <h4 className="font-bold text-sm text-slate-900 uppercase tracking-wide">
-                        Safety & Code Compliance
+                        Safety & Reliability
                       </h4>
                       <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                        We prioritize safety, load calculations, and neat routing so your property runs safely without tripping or fire risks.
+                        We prioritize safety, load calculations, and neat routing so your property runs safely without tripping or electrical hazards.
                       </p>
                       <div className="mt-4 pt-3 border-t border-slate-200 space-y-1.5 text-xs text-slate-600">
-                        <p><strong className="text-slate-800">Standard:</strong> SANS 10142-1 Code of Practice</p>
+                        <p><strong className="text-slate-800">Safety:</strong> Work adheres to applicable safety regulations</p>
                         <p><strong className="text-slate-800">Coverage:</strong> Johannesburg, Pretoria, East Rand</p>
                       </div>
                     </div>

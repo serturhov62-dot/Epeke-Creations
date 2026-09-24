@@ -101,10 +101,10 @@ export const EpekeLogo: React.FC<EpekeLogoProps> = ({
         </div>
         <div className="flex flex-col">
           <span className="font-['Caveat'] text-2xl font-bold leading-none tracking-tight text-slate-900">
-            Epeke Creations <span className="text-base font-sans font-medium text-blue-600">(Pty) Ltd</span>
+            Epeke Creations
           </span>
-          <span className="text-[10px] text-slate-500 font-mono tracking-wider mt-0.5">
-            Reg: 2026/111679/07 · Tax: 9860419192
+          <span className="text-[10px] text-slate-500 tracking-wider mt-0.5 uppercase font-medium">
+            Quality Craftsmanship
           </span>
         </div>
       </div>
@@ -123,39 +123,38 @@ export const EpekeLogo: React.FC<EpekeLogoProps> = ({
               inverted ? 'text-white' : 'text-slate-900'
             }`}
           >
-            Epeke Creations <span className="font-sans text-xl font-normal opacity-90">(Pty) Ltd</span>
+            Epeke Creations
           </h2>
-          <div className="mt-1 flex items-center justify-center gap-3 text-xs font-mono tracking-wide text-slate-500">
-            <span>Reg.no. 2026/111679/07</span>
-            <span aria-hidden="true" className="opacity-40">|</span>
-            <span>Tax.no. 9860419192</span>
+          <div className="mt-1 flex items-center justify-center gap-2 text-xs uppercase tracking-wider text-slate-500 font-semibold">
+            <span>Steel Work</span>
+            <span aria-hidden="true" className="opacity-40">·</span>
+            <span>Wood Work</span>
+            <span aria-hidden="true" className="opacity-40">·</span>
+            <span>Caskets</span>
+            <span aria-hidden="true" className="opacity-40">·</span>
+            <span>Electrical</span>
           </div>
         </div>
       </div>
     );
   }
 
-  // Default: Compact Navbar variant (Clean, single-line Top Bar contract compliant)
+  // Default: Compact Navbar variant
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <div className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 transition-transform duration-200 hover:scale-105">
         {Emblem}
       </div>
       <div className="flex flex-col">
-        <div className="flex items-baseline gap-1.5">
-          <span
-            className={`font-['Caveat'] text-2xl sm:text-[26px] font-bold leading-tight ${
-              inverted ? 'text-white' : 'text-slate-900'
-            }`}
-          >
-            Epeke Creations
-          </span>
-          <span className="text-xs font-semibold tracking-wider text-blue-600">
-            (Pty) Ltd
-          </span>
-        </div>
-        <span className="text-[10px] text-slate-400 font-mono tracking-tight -mt-1 hidden sm:inline-block">
-          Reg. 2026/111679/07
+        <span
+          className={`font-['Caveat'] text-2xl sm:text-[26px] font-bold leading-tight ${
+            inverted ? 'text-white' : 'text-slate-900'
+          }`}
+        >
+          Epeke Creations
+        </span>
+        <span className="text-[10px] text-slate-400 tracking-wider uppercase font-medium -mt-1 hidden sm:inline-block">
+          Craftsmanship & Solutions
         </span>
       </div>
     </div>

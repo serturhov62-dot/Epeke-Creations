@@ -1,6 +1,6 @@
 /**
- * Epeke Creations (Pty) Ltd - Image Asset Manifest
- * Real generated high-resolution photography assets with resilient SVG fallbacks
+ * Epeke Creations - Image Asset Manifest
+ * High-resolution craftsmanship and portfolio photography assets
  */
 
 import heroImg from '../assets/images/hero_craftsmanship_workshop_1790255001017.jpg';

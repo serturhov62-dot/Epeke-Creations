@@ -167,8 +167,8 @@ export const ContactPage: React.FC = () => {
                   <h2 className="text-2xl font-bold text-slate-900 tracking-tight font-sans">
                     EPEKE CREATIONS
                   </h2>
-                  <p className="text-xs font-mono text-slate-500 mt-1">
-                    Reg.no. {COMPANY_INFO.regNumber} · Tax.no. {COMPANY_INFO.taxNumber}
+                  <p className="text-xs text-slate-500 mt-1 font-medium">
+                    Quality Craftsmanship · Practical Solutions · Built With Care
                   </p>
                 </div>
 
@@ -239,7 +239,7 @@ export const ContactPage: React.FC = () => {
 
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 flex items-center gap-3">
                   <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0" />
-                  <span>Licensed and registered South African fabrication & electrical service provider.</span>
+                  <span>Professional South African custom fabrication, woodwork, and electrical services.</span>
                 </div>
               </div>
             </div>
@@ -407,12 +407,12 @@ export const ContactPage: React.FC = () => {
                   Location & Gauteng Dispatch Hub
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Unit 4, Workshop & Fabrication Hub, Boksburg / Johannesburg, Gauteng, South Africa
+                  Gauteng, South Africa (Workshop & Mobile Dispatch)
                 </p>
               </div>
 
               <a
-                href="https://maps.google.com/?q=Boksburg,Gauteng,South+Africa"
+                href="https://maps.google.com/?q=Gauteng,South+Africa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors shrink-0"

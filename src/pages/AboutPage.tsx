@@ -27,7 +27,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
   const pillars = [
     {
       title: 'Quality Workmanship',
-      desc: 'We do not take shortcuts. In steel fabrication, joints are fully welded and ground clean. In woodworking, boards are edge-banded properly with durable joinery. In electrical, all circuits comply with SANS standards.',
+      desc: 'We do not take shortcuts. In steel fabrication, joints are fully welded and ground clean. In woodworking, boards are edge-banded properly with durable joinery. In electrical, all circuits are installed with safe connections and proper isolation. Services are subject to applicable regulations and requirements.',
     },
     {
       title: 'Custom Designs',
@@ -104,25 +104,25 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
               </h2>
 
               <p>
-                Epeke Creations (Pty) Ltd was founded to offer dependable, high-quality custom fabrication, woodworking, and technical services under one unified roof. We recognize that home and business owners often struggle to find skilled artisans who combine hands-on technical skill with reliable service, clear communication, and fair pricing.
+                Epeke Creations was founded to offer dependable, high-quality custom fabrication, woodworking, and technical services under one unified roof. We recognize that home and business owners often struggle to find skilled artisans who combine hands-on technical skill with reliable service, clear communication, and fair pricing.
               </p>
 
               <p>
-                Our work spans residential, commercial, and individual needs. In custom steel work, we build robust furniture, security doors, structural frames, and custom architectural elements. In woodworking, we craft custom kitchen cupboards, wardrobes, bespoke desks, and interior storage. Our electrical services provide certified installations, maintenance, and distribution board rewiring. And in our caskets and coffins division, we manufacture dignified resting vessels with compassion and quiet dignity.
+                Our work spans residential, commercial, and individual needs. In custom steel work, we build robust furniture, security doors, structural frames, and custom architectural elements. In woodworking, we craft custom kitchen cupboards, wardrobes, bespoke desks, and interior storage. Our electrical services provide dependable installations, maintenance, and distribution board rewiring. And in our caskets and coffins division, we manufacture dignified resting vessels with compassion and quiet dignity.
               </p>
 
               <p>
                 We do not claim to be the biggest or make exaggerated promises. Instead, we let our work speak for itself: accurate measurements, clean welds, smooth timber finishes, neat electrical routing, and honest advice when planning your project.
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono text-slate-600">
-                <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200">
-                  CIPC Reg: 2026/111679/07
+              <div className="pt-2 flex flex-wrap gap-3 text-xs text-slate-600">
+                <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200 font-medium">
+                  Custom Steel & Woodwork
                 </span>
-                <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200">
-                  SARS Tax No: 9860419192
+                <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200 font-medium">
+                  Caskets & Electrical Services
                 </span>
-                <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200">
+                <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200 font-medium">
                   Gauteng, South Africa
                 </span>
               </div>
@@ -138,19 +138,19 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 <div className="border-t border-slate-200 pt-6 text-left space-y-3 text-xs text-slate-600">
                   <p className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>Registered South African Private Company (Pty Ltd)</span>
+                    <span>Independent South African workshop & fabrication team</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>Dedicated workshop in Gauteng with nationwide dispatch</span>
+                    <span>Based in Gauteng with regional delivery & custom order dispatch</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>SABS & SANS 10142 compliant materials & methods</span>
+                    <span>Durable materials and quality workshop craftsmanship</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>Direct personal service from skilled craftsmen</span>
+                    <span>Direct personal communication with our artisan team</span>
                   </p>
                 </div>
 

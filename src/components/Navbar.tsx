@@ -55,8 +55,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
             <span className="text-slate-400 hidden sm:inline">
               South African Fabrication & Electrical Solutions
             </span>
-            <span className="text-slate-400 font-mono text-[11px]">
-              Reg: 2026/111679/07
+            <span className="text-slate-400 text-xs hidden md:inline">
+              Quality Craftsmanship · Built With Care
             </span>
           </div>
 

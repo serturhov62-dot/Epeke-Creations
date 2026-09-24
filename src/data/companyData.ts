@@ -17,6 +17,7 @@ export interface GalleryItem {
   title: string;
   category: 'steel' | 'wood' | 'caskets' | 'electrical';
   categoryLabel: string;
+  badge?: string;
   description: string;
   specs: string;
   image: string;
@@ -29,13 +30,14 @@ export interface GalleryItem {
 // To update your contact numbers, email, or form service, edit the values below.
 // ============================================================================
 export const COMPANY_INFO = {
-  name: 'Epeke Creations (Pty) Ltd',
+  name: 'Epeke Creations',
   shortName: 'Epeke Creations',
   tagline: 'Quality Craftsmanship. Practical Solutions. Built With Care.',
   heroDescription:
     'Epeke Creations provides custom steel work, woodworking, caskets and coffins, and electrical services. We focus on quality workmanship, practical designs and dependable service.',
-  regNumber: '2026/111679/07',
-  taxNumber: '9860419192',
+  // Official Business Registration / Tax numbers (set when verified):
+  regNumber: '',
+  taxNumber: '',
 
   // Business Phone & WhatsApp (South Africa international format)
   // For WhatsApp URL, digits only: '27728419192'
@@ -47,13 +49,13 @@ export const COMPANY_INFO = {
   email: 'info@epekecreations.co.za',
   altEmail: 'epekecreations@gmail.com',
 
-  // Static Form Backend Endpoint (Optional):
-  // Since GitHub Pages is static hosting, connect your form to Formspree (https://formspree.io)
-  // or Web3Forms (https://web3forms.com) by pasting your endpoint URL here (e.g. 'https://formspree.io/f/your_id').
-  // If left empty, submissions seamlessly prompt the user to send their message via WhatsApp or default Email client!
-  formEndpoint: '',
+  // Form Submission Endpoint:
+  // Preconfigured with FormSubmit (https://formsubmit.co/ajax/) to route enquiries directly
+  // to your email (info@epekecreations.co.za) with full file upload attachment support.
+  // If you prefer Formspree, replace this single value with your Formspree endpoint (e.g. 'https://formspree.io/f/YOUR_ID').
+  formEndpoint: 'https://formsubmit.co/ajax/info@epekecreations.co.za',
 
-  address: 'Unit 4, Workshop & Fabrication Hub, Boksburg / Johannesburg, Gauteng, South Africa',
+  address: 'Gauteng, South Africa',
   serviceAreas: 'Gauteng (Johannesburg, Pretoria, Ekurhuleni) & nationwide dispatch for bespoke orders',
   hours: [
     { days: 'Monday – Friday', hours: '07:30 – 17:00' },
@@ -95,7 +97,7 @@ export const SERVICES_DATA: {
       'Custom metal structures, pergolas and carports',
     ],
     materialsUsed: [
-      'Square & rectangular mild steel tubing (SABS approved)',
+      'Square & rectangular mild steel tubing',
       'Cold-rolled & hot-rolled solid steel plate',
       'Stainless steel (Grade 304 / 316 for exterior longevity)',
       'Durable powder coating (matte black, charcoal, bronze, custom RAL colors)',
@@ -183,7 +185,7 @@ export const SERVICES_DATA: {
     shortDescription: 'Professional electrical installation, maintenance, repairs and certified compliance.',
     heroImage: ASSET_IMAGES.electrical,
     overview:
-      'Our electrical division delivers safe, reliable, and neat electrical solutions for homes, workshops, and commercial offices. We adhere strictly to South African National Standards (SANS 10142-1 Code of Practice) to ensure safe operation, reliable power distribution, and peace of mind.',
+      'Our electrical division delivers safe, reliable, and neat electrical solutions for homes, workshops, and commercial offices. All electrical installations and repairs are carried out with careful planning, neat routing, and proper safety precautions. Services are subject to applicable regulations and requirements.',
     offerings: [
       'Complete electrical installations for new builds and renovations',
       'Electrical repairs and circuit restorations',
@@ -197,7 +199,7 @@ export const SERVICES_DATA: {
       'Commercial electrical work (workshop power points, 3-phase machinery wiring)',
     ],
     materialsUsed: [
-      'SABS-approved copper cabling (flat twin & earth, surfix, armored cable)',
+      'High-grade copper cabling (flat twin & earth, surfix, armored cable)',
       'Tier-1 circuit breakers, isolators & earth leakage relays (Schneider, CBI, Hager)',
       'High-grade fire-retardant distribution enclosures',
       'Long-life energy-efficient LED modules with high CRI color rendering',
@@ -206,9 +208,9 @@ export const SERVICES_DATA: {
     processSteps: [
       'Thorough on-site electrical inspection & load calculations',
       'Clear, itemized quotation with transparent parts & labor',
-      'Clean, neatly routed cable installation adhering to SANS 10142-1',
+      'Clean, neatly routed cable installation and secure connections',
       'System testing (insulation resistance, loop impedance, earth continuity)',
-      'Client demonstration & certification documentation',
+      'Client demonstration and operational handover',
     ],
   },
 ];
@@ -219,6 +221,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Custom Minimalist Steel Dining Table & Benches',
     category: 'steel',
     categoryLabel: 'Steel Work',
+    badge: 'Custom Design Example',
     description: 'Bespoke 8-seater dining table with heavy-gauge rectangular hollow steel frame, matte black industrial powder-coat, and solid Kiaat hardwood timber top.',
     specs: '2400mm × 1000mm × 760mm · 50x50mm Steel Tube · Matte Charcoal Finish',
     image: ASSET_IMAGES.steelWork,
@@ -230,6 +233,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Contemporary Oak Kitchen Cupboard Installation',
     category: 'wood',
     categoryLabel: 'Wood Work',
+    badge: 'Custom Design Example',
     description: 'Floor-to-ceiling custom kitchen cabinetry with natural warm oak timber grain, integrated handle profiles, and recessed under-cabinet warm LED lighting.',
     specs: 'Custom L-Shape Configuration · Soft-Close European Hardware · Natural Satin Seal',
     image: ASSET_IMAGES.woodWork,
@@ -241,6 +245,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Handcrafted Solid Mahogany Heritage Casket',
     category: 'caskets',
     categoryLabel: 'Caskets & Coffins',
+    badge: 'Custom Design Example',
     description: 'Dignified handcrafted solid mahogany casket with deep satin luster, polished solid brass swing-bar handles, and ruched ivory satin pleated interior.',
     specs: 'Standard Adult 2050mm × 650mm · Solid Timber · Ivory Satin Lining',
     image: ASSET_IMAGES.caskets,
@@ -252,8 +257,9 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Residential & Commercial DB Board Modernization',
     category: 'electrical',
     categoryLabel: 'Electrical',
+    badge: 'Custom Design Example',
     description: 'Clean distribution board installation with certified surge protection, dual earth leakage separation, and neat color-coded circuit routing for load safety.',
-    specs: '36-Way Flush Board · SANS 10142-1 Compliant · Type 2 Surge Arrestor',
+    specs: '36-Way Flush Board · Surge Protection · Circuit Distribution',
     image: ASSET_IMAGES.electrical,
     aspect: '4:3',
     featured: true,
@@ -263,6 +269,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Bespoke Steel Bed Frame & Architectural Security Door',
     category: 'steel',
     categoryLabel: 'Steel Work',
+    badge: 'Custom Design Example',
     description: 'Custom welded steel platform bed frame with rigid support slats, complemented by an ornamental steel security entry door featuring modern geometric bars.',
     specs: 'Queen-Size 1520mm × 1880mm · 40mm Box Section · Tamper-Resistant Hinges',
     image: ASSET_IMAGES.steelBedGate,
@@ -274,6 +281,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Modern Two-Tone Kitchen Storage & Floating Island',
     category: 'wood',
     categoryLabel: 'Wood Work',
+    badge: 'Custom Design Example',
     description: 'Custom kitchen with matte graphite cabinetry, contrasting natural timber accents, floating display shelves, and heavy-duty deep pot drawers.',
     specs: 'Full Kitchen Installation · Blum Soft-Close Runners · Quartz Worktop Integration',
     image: ASSET_IMAGES.kitchenCupboards,
@@ -285,6 +293,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Classic Six-Sided Cherrywood Traditional Coffin',
     category: 'caskets',
     categoryLabel: 'Caskets & Coffins',
+    badge: 'Custom Design Example',
     description: 'Traditional contour six-sided coffin with warm cherry stain, tiered raised lid, polished chrome handles, and soft white padded interior lining.',
     specs: '1980mm Length · High-Tensile Base Rating · Polished Chrome Trim',
     image: ASSET_IMAGES.traditionalCoffin,
@@ -296,6 +305,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Architectural Suspended Lighting & Commercial Wiring',
     category: 'electrical',
     categoryLabel: 'Electrical',
+    badge: 'Custom Design Example',
     description: 'High-ceiling industrial office lighting fitout with suspended matte black track lighting, conduit trunking, and zoned digital dimmer circuits.',
     specs: 'Commercial Low-Glare LED · Precision Surface Conduit · Zoned Switching',
     image: ASSET_IMAGES.commercialElectrical,
@@ -307,6 +317,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     title: 'Artisan Workshop Steel Fabrication & TIG Welding',
     category: 'steel',
     categoryLabel: 'Steel Work',
+    badge: 'Custom Design Example',
     description: 'Precision welding and structural fabrication of custom architectural steel frameworks for residential gates and commercial partitions.',
     specs: 'Structural Mild Steel · Argon Purged TIG Welds · Anti-Rust Etch Primer',
     image: ASSET_IMAGES.hero,
@@ -315,37 +326,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
 ];
 
-export const TESTIMONIALS = [
-  {
-    quote:
-      'Epeke Creations fabricated our custom steel dining table and front security gate. The welds are exceptionally clean, and the matte finish is flawless. Delivered right to our home in Pretoria on schedule.',
-    author: 'Sipho Ndlovu',
-    role: 'Homeowner',
-    location: 'Centurion, Gauteng',
-    service: 'Steel Fabrication & Security Gate',
-  },
-  {
-    quote:
-      'We contracted Epeke Creations for full custom bedroom wardrobes and study desks. Their carpentry is precise, sturdy, and practical. They listened to our design ideas and executed them with care.',
-    author: 'Tanya van der Merwe',
-    role: 'Interior Renovation Client',
-    location: 'Bedfordview, Johannesburg',
-    service: 'Custom Cabinetry & Woodwork',
-  },
-  {
-    quote:
-      'During an extremely difficult bereavement period, Epeke Creations handled our order with deep respect and quiet dignity. The casket craftsmanship was remarkable and delivery was discreet and prompt.',
-    author: 'Kgomotso Moloi',
-    role: 'Family Representative',
-    location: 'Soweto, Gauteng',
-    service: 'Heritage Solid Casket',
-  },
-  {
-    quote:
-      'Prompt, professional electrical installation. They upgraded our aging distribution board, installed modern downlights, and ensured everything complied strictly with SANS standards. Highly recommended.',
-    author: 'David Meyer',
-    role: 'Commercial Workshop Owner',
-    location: 'Boksburg, East Rand',
-    service: 'DB Board Upgrade & Lighting',
-  },
-];
+// Testimonials: In accordance with professional integrity requirements,
+// no fabricated reviews or fake customer identities are included.
+export const TESTIMONIALS: { quote: string; author: string; role: string; location: string; service: string; }[] = [];

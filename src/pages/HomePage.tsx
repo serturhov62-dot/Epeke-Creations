@@ -82,10 +82,10 @@ export const HomePage: React.FC<HomePageProps> = ({
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
-            {/* Trust badge with official registration */}
+            {/* Trust badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-900/50 border border-blue-500/30 text-blue-300 text-xs font-medium tracking-wide mb-6">
               <ShieldCheck className="w-4 h-4 text-blue-400" />
-              <span>South African Registered · Reg. {COMPANY_INFO.regNumber}</span>
+              <span>Custom Fabrication & Electrical Solutions · South Africa</span>
             </div>
 
             {/* Headline */}
@@ -225,20 +225,20 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="border-t border-slate-200 pt-6 space-y-3 text-xs text-slate-600">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-slate-800">Business Entity</span>
-                    <span className="font-mono">Epeke Creations (Pty) Ltd</span>
+                    <span className="font-semibold text-slate-800">Business Name</span>
+                    <span className="font-medium text-slate-900">Epeke Creations</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-slate-800">Company Registration</span>
-                    <span className="font-mono text-blue-600 font-bold">{COMPANY_INFO.regNumber}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-slate-800">SARS Tax Reference</span>
-                    <span className="font-mono">{COMPANY_INFO.taxNumber}</span>
+                    <span className="font-semibold text-slate-800">Core Services</span>
+                    <span>Steel, Wood, Caskets, Electrical</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-slate-800">Location</span>
                     <span>Gauteng, South Africa</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-semibold text-slate-800">Coverage</span>
+                    <span>Residential & Commercial</span>
                   </div>
                 </div>
               </div>
@@ -285,7 +285,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               <div className="space-y-4 text-base text-slate-600 leading-relaxed">
                 <p>
-                  Epeke Creations (Pty) Ltd is an established South African multidisciplinary workshop specializing in custom steel fabrication, bespoke woodworking, dignified caskets and coffins, and certified electrical services.
+                  Epeke Creations is an established South African multidisciplinary workshop specializing in custom steel fabrication, bespoke woodworking, dignified caskets and coffins, and electrical services.
                 </p>
                 <p>
                   We provide practical, custom-made solutions for residential homeowners, commercial businesses, contractors, and individual clients. Rather than mass-producing generic items, we listen carefully to what you need, take accurate measurements, select appropriate materials, and craft solutions that fit both your space and budget.
@@ -358,13 +358,13 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
             <div>
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
-                Portfolio Showcase
+                Design Examples & Capabilities
               </span>
               <h2 className="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
-                Recent Projects & Craftsmanship
+                Custom Design Examples & Specifications
               </h2>
               <p className="mt-2 text-sm text-slate-600 max-w-xl">
-                Click on any project to inspect specifications and details in our high-resolution lightbox.
+                Explore example designs and specifications of custom steel, woodwork, caskets, and electrical installations. Built to your exact requirements upon order.
               </p>
             </div>
 
@@ -394,6 +394,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors" />
                   <span className="absolute top-3 left-3 text-[11px] font-semibold px-2.5 py-1 bg-slate-900/80 text-white rounded backdrop-blur-sm">
                     {item.categoryLabel}
+                  </span>
+                  <span className="absolute top-3 right-3 text-[10px] font-medium px-2 py-0.5 bg-blue-600/90 text-white rounded backdrop-blur-sm">
+                    {item.badge || 'Example Design'}
                   </span>
                 </div>
 
@@ -471,42 +474,42 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. VERIFIED CLIENT TESTIMONIALS */}
+      {/* 6. CUSTOMER REVIEWS */}
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-600">
               Customer Feedback
             </span>
             <h2 className="mt-2 text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">
-              Trusted Across Gauteng & Beyond
+              Customer Reviews Coming Soon
             </h2>
-            <p className="mt-2 text-sm text-slate-600">
-              Honest experiences from residential and business clients who trust our workmanship.
+            <p className="mt-3 text-base text-slate-600">
+              Your feedback matters. As we complete more custom projects across Gauteng, verified client reviews and project photographs will be added here.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {TESTIMONIALS.map((t, idx) => (
-              <div
-                key={idx}
-                className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between"
+          <div className="max-w-3xl mx-auto p-8 bg-slate-50 border border-slate-200 rounded-2xl text-center space-y-4">
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Have you worked with Epeke Creations on a steel, woodworking, casket, or electrical project? We welcome your comments, photographs, and feedback.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 pt-2">
+              <a
+                href={whatsappHeroUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg shadow-sm transition-colors"
               >
-                <p className="text-sm text-slate-700 leading-relaxed italic">
-                  "{t.quote}"
-                </p>
-
-                <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center justify-between">
-                  <div>
-                    <h4 className="font-bold text-sm text-slate-900">{t.author}</h4>
-                    <p className="text-xs text-slate-500">{t.role} · {t.location}</p>
-                  </div>
-                  <span className="text-[11px] font-medium text-blue-700 bg-blue-100/70 px-2.5 py-1 rounded">
-                    {t.service}
-                  </span>
-                </div>
-              </div>
-            ))}
+                <MessageCircle className="w-4 h-4" />
+                <span>Submit Feedback via WhatsApp</span>
+              </a>
+              <button
+                onClick={() => onNavigate('quote')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-slate-800 bg-white hover:bg-slate-100 border border-slate-300 rounded-lg shadow-sm transition-colors"
+              >
+                <span>Request a Quote</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

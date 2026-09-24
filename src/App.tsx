@@ -1,7 +1,7 @@
 /**
- * Epeke Creations (Pty) Ltd - Official Company Website
- * Custom Fabrication, Woodworking, Caskets/Coffins & Electrical Services
- * Reg.no. 2026/111679/07 | Tax.no. 9860419192 | South Africa
+ * Epeke Creations - Official Company Website
+ * Custom Steel Fabrication, Woodworking, Caskets & Electrical Services
+ * Gauteng, South Africa
  */
 
 import React, { useState, useEffect } from 'react';

@@ -57,7 +57,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
             <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">
               <span>{item.categoryLabel}</span>
               <span aria-hidden="true">·</span>
-              <span className="text-slate-400 font-normal">Custom Project</span>
+              <span className="text-slate-500 font-medium">{item.badge || 'Custom Design Example'}</span>
             </div>
 
             <h3 className="text-xl font-bold text-slate-900 leading-tight">
