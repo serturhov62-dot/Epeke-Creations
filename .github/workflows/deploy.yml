@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
 
-# Set permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Permissions required for deploying to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -18,10 +18,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -39,14 +36,19 @@ jobs:
       - name: Build Project (Vite)
         run: npm run build
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5
-
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
 
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
