@@ -6,11 +6,11 @@ import {defineConfig} from 'vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command, mode }) => {
   // For GitHub Pages repository https://github.com/serturhov62-dot/Epeke-Creations
   // Production builds will serve assets under /Epeke-Creations/
   // Development mode remains at '/' for local testing and AI Studio dev server
-  const base = process.env.VITE_BASE || (mode === 'production' ? '/Epeke-Creations/' : '/');
+  const base = process.env.VITE_BASE || (command === 'build' || mode === 'production' ? '/Epeke-Creations/' : '/');
 
   return {
     base,
