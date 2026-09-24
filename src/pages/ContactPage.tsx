@@ -100,63 +100,80 @@ export const ContactPage: React.FC = () => {
           {/* Quick Connect Action Buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             {/* Phone Button */}
-            <a
-              href={`tel:${COMPANY_INFO.phone}`}
-              className="p-5 bg-white hover:bg-slate-50 rounded-2xl border border-slate-200 shadow-sm transition-all duration-150 flex items-center gap-4 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
                 <Phone className="w-6 h-6" />
               </div>
-              <div>
-                <span className="text-xs font-bold uppercase text-slate-500">
+              <div className="space-y-0.5">
+                <span className="text-xs font-bold uppercase text-slate-500 block">
                   Call Us Directly
                 </span>
-                <p className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <a
+                  href={`tel:${COMPANY_INFO.phone}`}
+                  className="text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors block"
+                >
                   {COMPANY_INFO.phoneDisplay}
-                </p>
-                <span className="text-[11px] text-blue-600 font-medium">Tap to Dial</span>
+                </a>
+                <a
+                  href={`tel:${COMPANY_INFO.altPhone}`}
+                  className="text-xs text-slate-500 hover:text-blue-600 transition-colors block"
+                >
+                  Alt: {COMPANY_INFO.altPhoneDisplay}
+                </a>
               </div>
-            </a>
+            </div>
 
             {/* WhatsApp Button */}
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 bg-emerald-50 hover:bg-emerald-100/70 rounded-2xl border border-emerald-200 shadow-sm transition-all duration-150 flex items-center gap-4 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="p-5 bg-emerald-50 rounded-2xl border border-emerald-200 shadow-sm flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
                 <MessageCircle className="w-6 h-6" />
               </div>
-              <div>
-                <span className="text-xs font-bold uppercase text-emerald-800">
+              <div className="space-y-0.5">
+                <span className="text-xs font-bold uppercase text-emerald-800 block">
                   WhatsApp Support
                 </span>
-                <p className="text-sm font-bold text-emerald-950">
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(COMPANY_INFO.whatsappDefaultMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-bold text-emerald-950 hover:text-emerald-700 transition-colors block"
+                >
                   {COMPANY_INFO.phoneDisplay}
-                </p>
-                <span className="text-[11px] text-emerald-700 font-medium">Instant Chat & Voice Note</span>
+                </a>
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.altWhatsappNumber}?text=${encodeURIComponent(COMPANY_INFO.whatsappDefaultMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-emerald-700 hover:underline block"
+                >
+                  Alt: {COMPANY_INFO.altPhoneDisplay}
+                </a>
               </div>
-            </a>
+            </div>
 
             {/* Email Button */}
-            <a
-              href={`mailto:${COMPANY_INFO.email}`}
-              className="p-5 bg-white hover:bg-slate-50 rounded-2xl border border-slate-200 shadow-sm transition-all duration-150 flex items-center gap-4 group"
-            >
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
                 <Mail className="w-6 h-6" />
               </div>
-              <div className="overflow-hidden">
-                <span className="text-xs font-bold uppercase text-slate-500">
+              <div className="overflow-hidden space-y-0.5">
+                <span className="text-xs font-bold uppercase text-slate-500 block">
                   Send An Email
                 </span>
-                <p className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors truncate">
+                <a
+                  href={`mailto:${COMPANY_INFO.email}`}
+                  className="text-sm font-bold text-slate-900 hover:text-blue-600 transition-colors truncate block"
+                >
                   {COMPANY_INFO.email}
-                </p>
-                <span className="text-[11px] text-blue-600 font-medium">Open Mail Client</span>
+                </a>
+                <a
+                  href={`mailto:${COMPANY_INFO.altEmail}`}
+                  className="text-xs text-slate-500 hover:text-blue-600 transition-colors truncate block"
+                >
+                  {COMPANY_INFO.altEmail}
+                </a>
               </div>
-            </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -174,11 +191,24 @@ export const ContactPage: React.FC = () => {
 
                 <div className="space-y-4 text-xs sm:text-sm text-slate-700">
                   <div className="flex items-start gap-3.5">
+                    <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 font-bold flex items-center justify-center shrink-0 mt-0.5 text-[10px]">
+                      SL
+                    </div>
+                    <div>
+                      <strong className="block text-slate-900 font-semibold">Contact Person:</strong>
+                      <span className="text-slate-700">{COMPANY_INFO.contactPerson}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5">
                     <Phone className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     <div>
                       <strong className="block text-slate-900 font-semibold">Phone:</strong>
-                      <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-blue-600">
+                      <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-blue-600 block">
                         {COMPANY_INFO.phoneDisplay}
+                      </a>
+                      <a href={`tel:${COMPANY_INFO.altPhone}`} className="text-slate-500 hover:text-blue-600 block text-xs">
+                        Alt: {COMPANY_INFO.altPhoneDisplay}
                       </a>
                     </div>
                   </div>
@@ -188,12 +218,20 @@ export const ContactPage: React.FC = () => {
                     <div>
                       <strong className="block text-slate-900 font-semibold">WhatsApp:</strong>
                       <a
-                        href={whatsappUrl}
+                        href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(COMPANY_INFO.whatsappDefaultMessage)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-700 hover:text-emerald-800"
+                        className="text-emerald-700 hover:text-emerald-800 block"
                       >
                         {COMPANY_INFO.phoneDisplay}
+                      </a>
+                      <a
+                        href={`https://wa.me/${COMPANY_INFO.altWhatsappNumber}?text=${encodeURIComponent(COMPANY_INFO.whatsappDefaultMessage)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-600 hover:underline block text-xs"
+                      >
+                        Alt: {COMPANY_INFO.altPhoneDisplay}
                       </a>
                     </div>
                   </div>
@@ -202,8 +240,11 @@ export const ContactPage: React.FC = () => {
                     <Mail className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     <div className="break-all">
                       <strong className="block text-slate-900 font-semibold">Email:</strong>
-                      <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-blue-600">
+                      <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-blue-600 block">
                         {COMPANY_INFO.email}
+                      </a>
+                      <a href={`mailto:${COMPANY_INFO.altEmail}`} className="text-slate-500 hover:text-blue-600 block text-xs">
+                        Alt: {COMPANY_INFO.altEmail}
                       </a>
                     </div>
                   </div>
@@ -329,7 +370,7 @@ export const ContactPage: React.FC = () => {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="e.g. 072 841 9192"
+                          placeholder="e.g. 071 080 8080"
                           className="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none"
                         />
                       </div>
@@ -404,15 +445,15 @@ export const ContactPage: React.FC = () => {
                   Workshop & Operational Base
                 </span>
                 <h3 className="text-xl font-bold text-slate-900 mt-1">
-                  Location & Gauteng Dispatch Hub
+                  Location & Northern Cape Base
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Gauteng, South Africa (Workshop & Mobile Dispatch)
+                  Keimoes, Northern Cape, South Africa
                 </p>
               </div>
 
               <a
-                href="https://maps.google.com/?q=Gauteng,South+Africa"
+                href="https://maps.google.com/?q=Keimoes,Northern+Cape,South+Africa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors shrink-0"
@@ -427,16 +468,16 @@ export const ContactPage: React.FC = () => {
               <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]" />
               <div className="relative z-10 max-w-md bg-slate-950/90 backdrop-blur-md p-6 rounded-xl border border-slate-800 text-white shadow-2xl">
                 <MapPin className="w-8 h-8 text-blue-500 mx-auto mb-3" />
-                <h4 className="font-bold text-base">Epeke Creations Central Workshop</h4>
+                <h4 className="font-bold text-base">Epeke Creations Workshop</h4>
                 <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                  Conveniently situated along the East Rand / Johannesburg manufacturing corridor with direct highway access for rapid transport across Gauteng and nationwide courier dispatch.
+                  Based in Keimoes, Northern Cape, delivering custom steel fabrication, precision woodworking, respectful caskets and coffins, and electrical services, with regional dispatch and nationwide courier service for custom orders.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-800 flex justify-center gap-4 text-xs font-mono text-slate-400">
-                  <span>Johannesburg</span>
+                  <span>Keimoes</span>
                   <span>·</span>
-                  <span>Pretoria</span>
+                  <span>Upington</span>
                   <span>·</span>
-                  <span>Ekurhuleni</span>
+                  <span>Northern Cape</span>
                 </div>
               </div>
             </div>

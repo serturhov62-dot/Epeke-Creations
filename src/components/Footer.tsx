@@ -196,41 +196,71 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               Contact Information
             </h3>
             <ul className="space-y-3 text-xs text-slate-400">
+              <li className="text-slate-300 font-medium">
+                <span>{COMPANY_INFO.contactPerson}</span>
+              </li>
+
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                <a
-                  href={`tel:${COMPANY_INFO.phone}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {COMPANY_INFO.phoneDisplay}
-                </a>
+                <div className="space-y-0.5">
+                  <a
+                    href={`tel:${COMPANY_INFO.phone}`}
+                    className="block hover:text-white transition-colors"
+                  >
+                    {COMPANY_INFO.phoneDisplay}
+                  </a>
+                  <a
+                    href={`tel:${COMPANY_INFO.altPhone}`}
+                    className="block text-slate-400 hover:text-white transition-colors text-[11px]"
+                  >
+                    Alt: {COMPANY_INFO.altPhoneDisplay}
+                  </a>
+                </div>
               </li>
 
               <li className="flex items-start gap-2.5">
                 <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-emerald-300 transition-colors"
-                >
-                  {COMPANY_INFO.phoneDisplay} (WhatsApp)
-                </a>
+                <div className="space-y-0.5">
+                  <a
+                    href={`https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(COMPANY_INFO.whatsappDefaultMessage)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:text-emerald-300 transition-colors"
+                  >
+                    {COMPANY_INFO.phoneDisplay} (WhatsApp)
+                  </a>
+                  <a
+                    href={`https://wa.me/${COMPANY_INFO.altWhatsappNumber}?text=${encodeURIComponent(COMPANY_INFO.whatsappDefaultMessage)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:text-emerald-300 transition-colors text-[11px] text-emerald-400/80"
+                  >
+                    {COMPANY_INFO.altPhoneDisplay} (Alt WhatsApp)
+                  </a>
+                </div>
               </li>
 
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                <a
-                  href={`mailto:${COMPANY_INFO.email}`}
-                  className="hover:text-white transition-colors break-all"
-                >
-                  {COMPANY_INFO.email}
-                </a>
+                <div className="space-y-0.5">
+                  <a
+                    href={`mailto:${COMPANY_INFO.email}`}
+                    className="block hover:text-white transition-colors break-all"
+                  >
+                    {COMPANY_INFO.email}
+                  </a>
+                  <a
+                    href={`mailto:${COMPANY_INFO.altEmail}`}
+                    className="block text-slate-400 hover:text-white transition-colors break-all text-[11px]"
+                  >
+                    {COMPANY_INFO.altEmail}
+                  </a>
+                </div>
               </li>
 
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                <span>Gauteng, South Africa (Workshop & Field Dispatch)</span>
+                <span>{COMPANY_INFO.address}</span>
               </li>
 
               <li className="flex items-start gap-2.5">

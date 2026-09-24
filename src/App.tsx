@@ -1,7 +1,7 @@
 /**
  * Epeke Creations - Official Company Website
  * Custom Steel Fabrication, Woodworking, Caskets & Electrical Services
- * Gauteng, South Africa
+ * Keimoes, Northern Cape, South Africa
  */
 
 import React, { useState, useEffect } from 'react';

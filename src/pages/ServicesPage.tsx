@@ -432,7 +432,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         'Interior options (quilted velvet, ruched ivory satin, soft lace trim)',
                         'Handles and hardware (solid brass, polished chrome, swing bars)',
                         'Custom sizing (standard adult, oversized length & width options)',
-                        'Discreet, respectful delivery across Gauteng & nearby provinces',
+                        'Discreet, respectful delivery across Northern Cape & nearby regions',
                       ].map((item, i) => (
                         <div key={i} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-slate-600 shrink-0 mt-0.5" />
@@ -452,7 +452,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         We understand that funeral arrangements require fast, dependable, and compassionate service. We maintain reserved stock for urgent dispatch.
                       </p>
                       <div className="mt-4 pt-3 border-t border-slate-200 space-y-1.5 text-xs text-slate-600">
-                        <p><strong className="text-slate-800">Dispatch:</strong> Same-day or next-day delivery in Gauteng</p>
+                        <p><strong className="text-slate-800">Dispatch:</strong> Same-day or next-day delivery in Northern Cape</p>
                         <p><strong className="text-slate-800">Bulk Supply:</strong> Direct wholesale available for undertakers</p>
                       </div>
                     </div>

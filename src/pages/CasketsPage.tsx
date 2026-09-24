@@ -133,7 +133,7 @@ export const CasketsPage: React.FC<CasketsPageProps> = ({
                 <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">
                   <Truck className="w-4 h-4 text-blue-600 mb-1.5" />
                   <strong className="block text-slate-900">Discreet Delivery</strong>
-                  <span className="text-slate-500">Prompt transport to funeral parlors across Gauteng</span>
+                  <span className="text-slate-500">Prompt transport to funeral parlors across Northern Cape</span>
                 </div>
 
                 <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl">

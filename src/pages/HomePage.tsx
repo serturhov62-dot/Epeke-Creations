@@ -128,7 +128,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <p className="text-slate-400">Tailored to exact specs</p>
               </div>
               <div>
-                <p className="font-bold text-white text-base">Gauteng Based</p>
+                <p className="font-bold text-white text-base">Northern Cape Based</p>
                 <p className="text-slate-400">Serving South Africa</p>
               </div>
               <div className="col-span-2 sm:col-span-1">
@@ -234,7 +234,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-slate-800">Location</span>
-                    <span>Gauteng, South Africa</span>
+                    <span>Keimoes, Northern Cape</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="font-semibold text-slate-800">Coverage</span>
@@ -447,7 +447,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 We understand the sensitivity of honoring a loved one. Epeke Creations manufactures high-grade coffins and caskets featuring handcrafted solid timber and premium veneers, plush satin upholstery, sturdy load-tested brass and chrome handles, and dignified finishes.
               </p>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                Available directly to funeral parlors, undertakers, burial societies, and private families across Gauteng. We provide prompt, quiet service with transparent pricing.
+                Available directly to funeral parlors, undertakers, burial societies, and private families across the Northern Cape and regional areas. We provide prompt, quiet service with transparent pricing.
               </p>
 
               <div className="pt-3 flex flex-wrap gap-4">
@@ -485,7 +485,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               Customer Reviews Coming Soon
             </h2>
             <p className="mt-3 text-base text-slate-600">
-              Your feedback matters. As we complete more custom projects across Gauteng, verified client reviews and project photographs will be added here.
+              Your feedback matters. As we complete more custom projects across the Northern Cape and nationwide, verified client reviews and project photographs will be added here.
             </p>
           </div>
 

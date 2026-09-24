@@ -123,7 +123,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   Caskets & Electrical Services
                 </span>
                 <span className="px-3 py-1.5 bg-slate-100 rounded-md border border-slate-200 font-medium">
-                  Gauteng, South Africa
+                  Keimoes, Northern Cape
                 </span>
               </div>
             </div>
@@ -142,7 +142,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                   </p>
                   <p className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />
-                    <span>Based in Gauteng with regional delivery & custom order dispatch</span>
+                    <span>Based in Keimoes, Northern Cape with regional delivery & custom order dispatch</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-blue-600 shrink-0" />

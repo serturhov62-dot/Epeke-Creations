@@ -35,28 +35,37 @@ export const COMPANY_INFO = {
   tagline: 'Quality Craftsmanship. Practical Solutions. Built With Care.',
   heroDescription:
     'Epeke Creations provides custom steel work, woodworking, caskets and coffins, and electrical services. We focus on quality workmanship, practical designs and dependable service.',
+  
+  // Contact Person / Founder
+  contactPerson: 'Serturho Louw',
+
   // Official Business Registration / Tax numbers (set when verified):
   regNumber: '',
   taxNumber: '',
 
   // Business Phone & WhatsApp (South Africa international format)
-  // For WhatsApp URL, digits only: '27728419192'
-  phone: '+27 72 841 9192',
-  phoneDisplay: '+27 72 841 9192',
-  whatsappNumber: '27728419192',
+  // Primary: 071 080 8080 | Alternative: 076 397 8916
+  phone: '+27 71 080 8080',
+  phoneDisplay: '071 080 8080',
+  altPhone: '+27 76 397 8916',
+  altPhoneDisplay: '076 397 8916',
 
-  // Business Email
-  email: 'info@epekecreations.co.za',
-  altEmail: 'epekecreations@gmail.com',
+  // WhatsApp numbers (digits only for wa.me links)
+  whatsappNumber: '27710808080',
+  altWhatsappNumber: '27763978916',
+
+  // Business Emails
+  email: 'serturhov62@gmail.com',
+  altEmail: 'parklouw65@gmail.com',
 
   // Form Submission Endpoint:
-  // Preconfigured with FormSubmit (https://formsubmit.co/ajax/) to route enquiries directly
-  // to your email (info@epekecreations.co.za) with full file upload attachment support.
-  // If you prefer Formspree, replace this single value with your Formspree endpoint (e.g. 'https://formspree.io/f/YOUR_ID').
-  formEndpoint: 'https://formsubmit.co/ajax/info@epekecreations.co.za',
+  // Preconfigured with FormSubmit to route quote enquiries directly to serturhov62@gmail.com
+  formEndpoint: 'https://formsubmit.co/ajax/serturhov62@gmail.com',
 
-  address: 'Gauteng, South Africa',
-  serviceAreas: 'Gauteng (Johannesburg, Pretoria, Ekurhuleni) & nationwide dispatch for bespoke orders',
+  // Physical Location & Service Coverage
+  address: 'Keimoes, Northern Cape, South Africa',
+  location: 'Keimoes, Northern Cape, South Africa',
+  serviceAreas: 'Keimoes, Northern Cape & nationwide dispatch for bespoke orders',
   hours: [
     { days: 'Monday – Friday', hours: '07:30 – 17:00' },
     { days: 'Saturday', hours: '08:00 – 13:00' },
@@ -176,7 +185,7 @@ export const SERVICES_DATA: {
       'Careful hand-crafting or prompt dispatch from our prepared reserves',
       'Rigorous structural and interior upholstery quality inspection',
       'Protective padded wrapping and secure transport packaging',
-      'Discreet, on-time delivery across Gauteng and surrounding regions',
+      'Discreet, on-time delivery across Northern Cape and surrounding regions',
     ],
   },
   {
