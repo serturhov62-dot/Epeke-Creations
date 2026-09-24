@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Epeke Creations - Redirecting...</title>
+    <script>
+      // Single Page Application redirect for GitHub Pages
+      // Ensures direct non-hash URLs redirect gracefully to the base with hash routing
+      (function () {
+        var pathSegments = window.location.pathname.split('/');
+        // In GitHub Pages, path starts with /Epeke-Creations/
+        var repoName = 'Epeke-Creations';
+        var repoIndex = pathSegments.indexOf(repoName);
+        var subpath = '';
+        if (repoIndex !== -1) {
+          subpath = pathSegments.slice(repoIndex + 1).join('/');
+        } else {
+          subpath = pathSegments.slice(1).join('/');
+        }
+        var newUrl = window.location.origin + '/' + repoName + '/#/' + (subpath || 'home');
+        window.location.replace(newUrl);
+      })();
+    </script>
+  </head>
+  <body style="font-family: sans-serif; text-align: center; padding: 40px; color: #334155; background-color: #f8fafc;">
+    <h2>Redirecting to Epeke Creations...</h2>
+    <p>If you are not redirected automatically, <a href="/Epeke-Creations/">click here</a>.</p>
+  </body>
+</html>

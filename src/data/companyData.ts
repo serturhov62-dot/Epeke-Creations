@@ -24,6 +24,10 @@ export interface GalleryItem {
   featured?: boolean;
 }
 
+// ============================================================================
+// EPEKE CREATIONS - BUSINESS CONFIGURATION
+// To update your contact numbers, email, or form service, edit the values below.
+// ============================================================================
 export const COMPANY_INFO = {
   name: 'Epeke Creations (Pty) Ltd',
   shortName: 'Epeke Creations',
@@ -32,11 +36,23 @@ export const COMPANY_INFO = {
     'Epeke Creations provides custom steel work, woodworking, caskets and coffins, and electrical services. We focus on quality workmanship, practical designs and dependable service.',
   regNumber: '2026/111679/07',
   taxNumber: '9860419192',
+
+  // Business Phone & WhatsApp (South Africa international format)
+  // For WhatsApp URL, digits only: '27728419192'
   phone: '+27 72 841 9192',
   phoneDisplay: '+27 72 841 9192',
   whatsappNumber: '27728419192',
+
+  // Business Email
   email: 'info@epekecreations.co.za',
   altEmail: 'epekecreations@gmail.com',
+
+  // Static Form Backend Endpoint (Optional):
+  // Since GitHub Pages is static hosting, connect your form to Formspree (https://formspree.io)
+  // or Web3Forms (https://web3forms.com) by pasting your endpoint URL here (e.g. 'https://formspree.io/f/your_id').
+  // If left empty, submissions seamlessly prompt the user to send their message via WhatsApp or default Email client!
+  formEndpoint: '',
+
   address: 'Unit 4, Workshop & Fabrication Hub, Boksburg / Johannesburg, Gauteng, South Africa',
   serviceAreas: 'Gauteng (Johannesburg, Pretoria, Ekurhuleni) & nationwide dispatch for bespoke orders',
   hours: [

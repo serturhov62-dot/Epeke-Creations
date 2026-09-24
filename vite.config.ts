@@ -1,10 +1,19 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'url';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig(({ mode }) => {
+  // For GitHub Pages repository https://github.com/serturhov62-dot/Epeke-Creations
+  // Production builds will serve assets under /Epeke-Creations/
+  // Development mode remains at '/' for local testing and AI Studio dev server
+  const base = process.env.VITE_BASE || (mode === 'production' ? '/Epeke-Creations/' : '/');
+
   return {
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

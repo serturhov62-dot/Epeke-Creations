@@ -21,11 +21,54 @@ export const ContactPage: React.FC = () => {
     subject: '',
     message: '',
   });
-  const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittedDirect, setSubmittedDirect] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const whatsappMessage = `Hello Epeke Creations,\n\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email || 'N/A'}\nSubject: ${formData.subject || 'General Inquiry'}\n\nMessage:\n${formData.message}`;
+  const whatsappDirectUrl = `https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(
+    formData.message ? whatsappMessage : COMPANY_INFO.whatsappDefaultMessage
+  )}`;
+
+  const emailSubject = encodeURIComponent(
+    formData.subject ? `Epeke Creations Inquiry: ${formData.subject}` : 'Epeke Creations Website Inquiry'
+  );
+  const emailBody = encodeURIComponent(
+    `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  );
+  const mailtoUrl = `mailto:${COMPANY_INFO.email}?subject=${emailSubject}&body=${emailBody}`;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.message.trim()) {
+      setErrorMsg('Please fill in your name, contact phone, and message.');
+      return;
+    }
+    setErrorMsg('');
+
+    // If an external static form service (e.g. Formspree/Web3Forms) is configured
+    if (COMPANY_INFO.formEndpoint && COMPANY_INFO.formEndpoint.trim() !== '') {
+      setIsSubmitting(true);
+      try {
+        const response = await fetch(COMPANY_INFO.formEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(formData),
+        });
+        if (response.ok) {
+          setSubmittedDirect(true);
+        } else {
+          setErrorMsg('Form submission failed. Please contact us directly via WhatsApp or Phone.');
+        }
+      } catch (err) {
+        setErrorMsg('Network error. Please contact us directly via WhatsApp or Phone.');
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else {
+      // Static GitHub Pages mode: Show formatted dispatch action with 1-click WhatsApp & Email buttons
+      setSubmittedDirect(true);
+    }
   };
 
   const whatsappUrl = `https://wa.me/${COMPANY_INFO.whatsappNumber}?text=${encodeURIComponent(
@@ -211,27 +254,58 @@ export const ContactPage: React.FC = () => {
                   Fill in your message and our office will get back to you promptly.
                 </p>
 
-                {sent ? (
-                  <div className="mt-6 p-6 bg-emerald-50 border border-emerald-200 rounded-xl text-center space-y-3 animate-in fade-in">
-                    <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
+                {submittedDirect ? (
+                  <div className="mt-6 p-6 sm:p-7 bg-emerald-50/80 border border-emerald-200 rounded-2xl space-y-4 animate-in fade-in">
+                    <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center">
                       <CheckCircle className="w-6 h-6" />
                     </div>
-                    <h4 className="font-bold text-slate-900">Message Dispatched!</h4>
-                    <p className="text-xs text-slate-600">
-                      Thank you for contacting Epeke Creations. We have received your inquiry and will follow up with you shortly.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setSent(false);
-                        setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
-                      }}
-                      className="px-4 py-2 text-xs font-bold text-blue-600 hover:text-blue-700"
-                    >
-                      Send Another Message
-                    </button>
+                    <div>
+                      <h4 className="font-bold text-slate-900 text-lg">Your Message is Ready to Send!</h4>
+                      <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                        To ensure fast response from our workshop manager, choose your preferred communication channel below:
+                      </p>
+                    </div>
+
+                    <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={whatsappDirectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg shadow-sm transition-colors"
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        <span>Send Message via WhatsApp</span>
+                      </a>
+
+                      <a
+                        href={mailtoUrl}
+                        className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-wider text-slate-800 bg-white hover:bg-slate-100 border border-slate-300 rounded-lg shadow-sm transition-colors"
+                      >
+                        <Mail className="w-4 h-4 text-blue-600" />
+                        <span>Send via Email Client</span>
+                      </a>
+                    </div>
+
+                    <div className="pt-3 border-t border-emerald-200/60 flex items-center justify-between text-xs text-slate-500">
+                      <span>Message drafted for: {COMPANY_INFO.phoneDisplay}</span>
+                      <button
+                        onClick={() => {
+                          setSubmittedDirect(false);
+                          setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+                        }}
+                        className="text-blue-600 hover:underline font-semibold"
+                      >
+                        Draft another message
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+                    {errorMsg && (
+                      <div className="p-3.5 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg">
+                        {errorMsg}
+                      </div>
+                    )}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-bold text-slate-700 uppercase mb-1.5">
@@ -302,13 +376,20 @@ export const ContactPage: React.FC = () => {
                       />
                     </div>
 
-                    <button
-                      type="submit"
-                      className="w-full py-3 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2"
-                    >
-                      <Send className="w-4 h-4" />
-                      <span>Send Message</span>
-                    </button>
+                    <div className="pt-2">
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-3 text-xs font-bold uppercase tracking-wider text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+                      >
+                        <Send className="w-4 h-4" />
+                        <span>{isSubmitting ? 'Submitting...' : 'Send Message'}</span>
+                      </button>
+                    </div>
+
+                    <p className="text-[11px] text-slate-400 text-center">
+                      Direct transmission to Epeke Creations via WhatsApp and Email.
+                    </p>
                   </form>
                 )}
               </div>

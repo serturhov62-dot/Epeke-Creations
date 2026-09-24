@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0f172a" />
+  <!-- Epeke Creations Blue Orbital Node Emblem -->
+  <circle cx="32" cy="32" r="21" stroke="#2563eb" stroke-width="3" fill="none" opacity="0.9" />
+  <ellipse cx="32" cy="32" rx="22" ry="10" stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-dasharray="3 3" opacity="0.8" transform="rotate(-25 32 32)" />
+  <!-- Center Core Node -->
+  <circle cx="32" cy="32" r="5.5" fill="#3b82f6" />
+  <circle cx="32" cy="32" r="2.5" fill="#ffffff" />
+  <!-- Orbital Nodes -->
+  <circle cx="15" cy="24" r="3" fill="#60a5fa" />
+  <circle cx="49" cy="40" r="3" fill="#60a5fa" />
+  <circle cx="32" cy="11" r="2.5" fill="#93c5fd" />
+</svg>
